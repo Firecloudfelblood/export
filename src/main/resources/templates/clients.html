@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{css/index.css}" href="css/index.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Product list</h1>
+    <table class="responstable">
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Se Unio</th>
+
+        </tr>
+        <tr th:each="client :${clients}">
+            <td><input type="radio" class="custSelected" name="custSelected"></td>
+            <td th:text="${client.identity}" class="id">0000</td>
+            <td th:text="${client.name}" class="name">n/a</td>
+            <td th:text="${client.Email}" class="email">someone@somewhere.com</td>
+            <td th:text="${client.joined}" class="joined">00/00/0000</td>
+        </tr>
+
+    </table>
+    <form th:object="${id}" th:action="@{/search}" method="get">
+        <input type="text" id="id" name="id" /><br />
+        <input type="submit" value="Buscar" id="buscar" />
+    </form>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
+    <script rel="script" th:src="@{js/index.js}" src="js/index.js"></script>
+</body>
+
+</html>

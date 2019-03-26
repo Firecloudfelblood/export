@@ -1,0 +1,15 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+
+
+
+mongodb:
+  primary:
+    host:localhost
+    port:27017
+    database:gym
+  secondary:
+    host:localhost
+    port:27017
+    database:mediumdb
