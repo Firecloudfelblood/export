@@ -25,5 +25,5 @@ public class ClientController {
         dbs.put("products", prepo.findAll());
         model.addAttribute("clients", dbs);
         return "clients";
-    }
+    }//nono
 }
